@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import FlexWrapper from "./FlexWrapper";
 
 const Jumbotron = () => {
     return (
@@ -7,7 +8,7 @@ const Jumbotron = () => {
                 <FlexWrapper>
                     <CustomList>
                         <li> <h1>Quiz on the Go?</h1> </li>
-                        <li> <h3>Download the Quizler app <CustomA href="#">here</CustomA></h3> </li>
+                        <li> <h3>Download the Quizler app <CustomA href="#"><i className="bi bi-box-arrow-up-right"></i></CustomA></h3> </li>
                     </CustomList>
                 </FlexWrapper>
             </Wrapper>
@@ -21,14 +22,6 @@ const Wrapper = styled.div`
     background-color: #21D4FD;
     background-image: linear-gradient(19deg, #21D4FD 0%, #B721FF 100%);
     color: whitesmoke;
-`;
-
-const FlexWrapper = styled.div`
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 `;
 
 const CustomList = styled.ul`

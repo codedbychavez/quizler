@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
+
 import Navbar from "react-bootstrap/Navbar";
 import Container from "react-bootstrap/Container";
 import Offcanvas from "react-bootstrap/Offcanvas";
@@ -12,11 +14,10 @@ return (
 
 <Navbar bg="light" expand={false}>
   <Container fluid>
-    {/* <Navbar.Toggle aria-controls="offcanvasNavbar" /> */}
-    <CustomToggle aria-controls="offcanvasNavbar">
-      <AvailableQuizzesButton variant="outline-info">Available Quizzes <i class="bi bi-arrow-right-circle"></i></AvailableQuizzesButton>
-    </CustomToggle>
+    <AvailableQuizzesButton aria-controls="offcanvasNavbar">Available Quizzes <i className="bi bi-arrow-right-circle"></i></AvailableQuizzesButton>
+    <CustomLink to="/">Dashboard <i class="bi bi-speedometer2"></i></CustomLink>
     <Navbar.Brand href="#">Quizler <SmallText>V{props.version}</SmallText></Navbar.Brand>
+
     <Navbar.Offcanvas
       id="offcanvasNavbar"
       aria-labelledby="offcanvasNavbarLabel"
@@ -27,8 +28,10 @@ return (
       </Offcanvas.Header>
       <Offcanvas.Body>
         <Nav className="justify-content-end flex-grow-1 pe-3">
-          <Nav.Link href="#action1">Home</Nav.Link>
-          <Nav.Link href="#action2">Link</Nav.Link>
+          
+            <CustomLink to="/quiz/math">Math</CustomLink>
+         
+          <Nav.Link href="#action2" disabled>Link</Nav.Link>
           
         </Nav>
    
@@ -41,14 +44,27 @@ return (
 
 }
 
-const CustomToggle = styled(Navbar.Toggle)`
-  border: 0px;
-`
 
-const AvailableQuizzesButton = styled(Button)`
+const AvailableQuizzesButton = styled(Navbar.Toggle)`
+  color: #0dcaf0;
+  border-color: #0dcaf0 !important; 
+  display: inline-block;
+  font-weight: 400;
+  line-height: 1.5;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  border-radius: 0.25rem;
   :hover {
+    background-color: #0dcaf0;
     color: whitesmoke;
   }
+`
+
+const CustomLink = styled(Link)`
+  text-decoration: none;
 `
 
 export default AppNav;

@@ -1,17 +1,20 @@
 import Card from 'react-bootstrap/Card';
 import styled from 'styled-components';
 
-const Instructions = () => {
+const Instructions = (props) => {
+    const instructions = props.instructions
+    const listItems = instructions.map((instruction, index) =>
+    <li key={index}>{instruction}</li>
+    );
+
     return (
         <Card>
             <Card.Header>
-                <Card.Title>General Instructions</Card.Title>
+                <Card.Title>Instructions for {props.quiz}</Card.Title>
             </Card.Header>
             <StyledCardBody>
                 <ol>
-                    <li>Select a quiz by clicking the available quizzes button (top left).</li>
-                    <li>Read all instructions from each quiz.</li>
-                    <li>Submit your quiz when completed by clicking the submit button at the end of each quiz.</li>
+                    {instructions ? listItems : "No Instructions."}
                 </ol>
             </StyledCardBody>
         </Card>
