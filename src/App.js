@@ -1,10 +1,13 @@
-import logo from './logo.svg';
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap-icons/font/bootstrap-icons.css';
+import Dashboard from './pages/Dashboard';
 
 function App() {
   return (
     <div className="App">
-      <h1>Welcome to Quizler</h1>
+      <Dashboard/>
+     
     </div>
   );
 }
