@@ -11,11 +11,11 @@ const AppNav = (props) => {
 
 return ( 
 
-<Navbar bg="light" expand={false}>
+<Navbar bg="dark" expand={false}>
   <Container fluid>
     <AvailableQuizzesButton aria-controls="offcanvasNavbar">Available Quizzes <i className="bi bi-arrow-right-circle"></i></AvailableQuizzesButton>
-    <CustomLink to="/">Dashboard <i class="bi bi-speedometer2"></i></CustomLink>
-    <Navbar.Brand href="#">Quizler <StyledSmallText>V{props.version}</StyledSmallText></Navbar.Brand>
+    <StyledRouterLink to="/">Dashboard <i class="bi bi-speedometer2"></i></StyledRouterLink>
+    <StyledNavbarBrand href="#">Quizler <StyledSmallText>V{props.version}</StyledSmallText></StyledNavbarBrand>
 
     <Navbar.Offcanvas
       id="offcanvasNavbar"
@@ -25,13 +25,13 @@ return (
       <Offcanvas.Header closeButton>
         <Offcanvas.Title id="offcanvasNavbarLabel">Available Quizzes</Offcanvas.Title>
       </Offcanvas.Header>
+
       <Offcanvas.Body>
         <Nav className="justify-content-end flex-grow-1 pe-3">
-          
-            <CustomLink to="/quiz/math">Math</CustomLink>
-         
-          <Nav.Link href="#action2" disabled>Link</Nav.Link>
-          
+            <StyledNavbarSectionTitle>Beginner</StyledNavbarSectionTitle>
+            <hr/>
+            <StyledRouterLinkSideNav to="/quiz/math">Simple Mathematics <i class="bi bi-box-arrow-up-right"></i></StyledRouterLinkSideNav>
+
         </Nav>
    
       </Offcanvas.Body>
@@ -45,7 +45,7 @@ return (
 
 
 const AvailableQuizzesButton = styled(Navbar.Toggle)`
-  color: #0dcaf0;
+  color: whitesmoke !important;
   border-color: #0dcaf0 !important; 
   display: inline-block;
   font-weight: 400;
@@ -62,8 +62,32 @@ const AvailableQuizzesButton = styled(Navbar.Toggle)`
   }
 `
 
-const CustomLink = styled(Link)`
+const StyledRouterLink = styled(Link)`
   text-decoration: none;
+  color: whitesmoke;
+  font-size: large;
+  :hover {
+    color: #0dcaf0;
+  }
+`
+
+const StyledRouterLinkSideNav = styled(Link)`
+  text-decoration: none;
+  color: dodgerblue;
+  text-decoration: underline;
+  line-height: 8px;
+  :hover {
+    color: #0dcaf0;
+  }
+`
+
+const StyledNavbarBrand = styled(Navbar.Brand)`
+  color: whitesmoke !important;
+`
+
+const StyledNavbarSectionTitle = styled.h5`
+  color: darkgray;
+  font-size: 20px;
 `
 
 export default AppNav;
