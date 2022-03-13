@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 
-const SmallText = styled.span`
+export const StyledSmallText = styled.span`
     font-size: 12px;
 `;
 
-export default SmallText;

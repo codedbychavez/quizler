@@ -1,5 +1,5 @@
 import AppNav from "../components/organisms/Nav";
-import FlexWrapper from "../components/molecules/FlexWrapper";
+import { StyledCenterWithFlexBox } from "../components/molecules/Center";
 
 const NotFound = () => {
 
@@ -7,9 +7,9 @@ const NotFound = () => {
         <div>
             <AppNav version="1.0"/>
                
-            <FlexWrapper>
+            <StyledCenterWithFlexBox>
                 <h1>404 Page not found.</h1>
-            </FlexWrapper>
+            </StyledCenterWithFlexBox>
             
         </div>
     )

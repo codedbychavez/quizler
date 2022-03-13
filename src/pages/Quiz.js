@@ -1,6 +1,6 @@
 import { Container } from "react-bootstrap";
 
-import SpacerSmall from "../components/molecules/Spacer";
+import { StyledSmallSpacer } from "../components/molecules/Spacer";
 import AppNav from "../components/organisms/Nav";
 import QuizTemplate from "../components/templates/QuizTemplate";
 
@@ -11,9 +11,9 @@ const Quiz = () => {
             <AppNav version="1.0"/>
                
             <Container>
-                <SpacerSmall>
+                <StyledSmallSpacer>
                     <QuizTemplate name={"Math Quiz"}/>
-                </SpacerSmall>
+                </StyledSmallSpacer>
             </Container>
         </div>
     )

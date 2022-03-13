@@ -5,8 +5,7 @@ import Navbar from "react-bootstrap/Navbar";
 import Container from "react-bootstrap/Container";
 import Offcanvas from "react-bootstrap/Offcanvas";
 import Nav from "react-bootstrap/Nav"
-import SmallText from "../molecules/SmallText";
-import { Button } from "react-bootstrap";
+import { StyledSmallText } from "../molecules/Text";
 
 const AppNav = (props) => {
 
@@ -16,7 +15,7 @@ return (
   <Container fluid>
     <AvailableQuizzesButton aria-controls="offcanvasNavbar">Available Quizzes <i className="bi bi-arrow-right-circle"></i></AvailableQuizzesButton>
     <CustomLink to="/">Dashboard <i class="bi bi-speedometer2"></i></CustomLink>
-    <Navbar.Brand href="#">Quizler <SmallText>V{props.version}</SmallText></Navbar.Brand>
+    <Navbar.Brand href="#">Quizler <StyledSmallText>V{props.version}</StyledSmallText></Navbar.Brand>
 
     <Navbar.Offcanvas
       id="offcanvasNavbar"

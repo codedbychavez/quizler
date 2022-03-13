@@ -1,22 +1,22 @@
 import styled from "styled-components";
-import FlexWrapper from "./FlexWrapper";
+import { StyledCenterWithFlexBox } from "./Center";
 
 const Jumbotron = () => {
     return (
         <>
-            <Wrapper>
-                <FlexWrapper>
-                    <CustomList>
+            <StyledJumbotronWrapper>
+                <StyledCenterWithFlexBox>
+                    <StyledUnorderedList>
                         <li> <h1>Quiz on the Go?</h1> </li>
-                        <li> <h3>Download the Quizler app <CustomA href="#"><i className="bi bi-box-arrow-up-right"></i></CustomA></h3> </li>
-                    </CustomList>
-                </FlexWrapper>
-            </Wrapper>
+                        <li> <h3>Download the Quizler app <StyledAnchor href="#"><i className="bi bi-box-arrow-up-right"></i></StyledAnchor></h3> </li>
+                    </StyledUnorderedList>
+                </StyledCenterWithFlexBox>
+            </StyledJumbotronWrapper>
         </>
     )
 }
 
-const Wrapper = styled.div`
+const StyledJumbotronWrapper = styled.div`
     height: 350px;
     width: 100%;
     background-color: #21D4FD;
@@ -24,11 +24,11 @@ const Wrapper = styled.div`
     color: whitesmoke;
 `;
 
-const CustomList = styled.ul`
+const StyledUnorderedList = styled.ul`
     list-style-type: none;
 `;
 
-const CustomA = styled.a`
+const StyledAnchor = styled.a`
     color: wheat;
     :hover {
         color: white;

@@ -1,5 +1,5 @@
 import Card from "react-bootstrap/Card";
-import SpacerSmall from "../molecules/Spacer";
+import { StyledSmallSpacer } from "../molecules/Spacer";
 import Instructions from "../organisms/Instructions";
 
 const QuizTemplate = (props) => {
@@ -10,11 +10,11 @@ const QuizTemplate = (props) => {
 
     return (
         <div>
-            <SpacerSmall>
+            <StyledSmallSpacer>
                 <Instructions instructions={instructions} quiz={props.name}/>
-            </SpacerSmall>
+            </StyledSmallSpacer>
 
-            <SpacerSmall>
+            <StyledSmallSpacer>
                 <Card>
                     <Card.Header>
                         <Card.Title>
@@ -26,7 +26,7 @@ const QuizTemplate = (props) => {
                         Some Content
                     </Card.Body>
                 </Card>
-            </SpacerSmall>
+            </StyledSmallSpacer>
         </div>
     )
 }

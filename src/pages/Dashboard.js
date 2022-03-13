@@ -1,6 +1,6 @@
 import { Container } from "react-bootstrap";
 import Jumbotron from "../components/molecules/Jumbotron";
-import SpacerSmall from "../components/molecules/Spacer";
+import { StyledSmallSpacer } from "../components/molecules/Spacer";
 import Instructions from "../components/organisms/Instructions";
 import AppNav from "../components/organisms/Nav";
 
@@ -17,9 +17,9 @@ const Dashboard = () => {
             <AppNav version="1.0"/> 
                 <Jumbotron/>
             <Container>
-                <SpacerSmall>
+                <StyledSmallSpacer>
                     <Instructions instructions={instructions} quiz={"all quizzes"}/>
-                </SpacerSmall>
+                </StyledSmallSpacer>
             </Container>
         </div>
     )

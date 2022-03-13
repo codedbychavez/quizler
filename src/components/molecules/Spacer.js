@@ -1,8 +1,6 @@
 import styled from 'styled-components';
 
-const SpacerSmall = styled.div`
+export const StyledSmallSpacer = styled.div`
     margin-top: 20px;
     margin-bottom: 20px;
 `; 
-
-export default SpacerSmall;
