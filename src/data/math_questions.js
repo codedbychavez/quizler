@@ -1,5 +1,6 @@
 export const MathQuestions = [
   {
+    id: 1,
     question: "What is the sum of 4 + 5",
     options: [
         {
@@ -22,6 +23,7 @@ export const MathQuestions = [
   },
 
   {
+    id: 2,
     question: "What is the sum of 4 * 5",
     options: [
         {
@@ -45,6 +47,7 @@ export const MathQuestions = [
 
 
   {
+    id: 3,
     question: "What is the sum of 5 - 4",
     options: [
         {

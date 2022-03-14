@@ -1,3 +1,4 @@
+import { useState } from "react";
 import styled from "styled-components";
 
 import Card from "react-bootstrap/Card";
@@ -8,6 +9,9 @@ import { MathQuestions } from "../../data/math_questions";
 import { Button } from "react-bootstrap";
 
 const QuizTemplate = (props) => {
+
+    const [answers, setAnswers] = useState([])
+
     const instructions = [
         "Read all instructions carefully.",
         "Submit your quiz when completed by clicking the submit button at the end of the quiz."
@@ -15,6 +19,15 @@ const QuizTemplate = (props) => {
 
     const mathQuestions = MathQuestions;
 
+    const handleAnswer = (questionId, option) => {
+        let answer = {
+            questionId: questionId,
+            option: option,
+        }
+
+        console.log(answers)
+
+    }
 
     return (
         <div>
@@ -33,9 +46,9 @@ const QuizTemplate = (props) => {
                     <StylesCardBody>
                        
                         {
-                        mathQuestions.map((question, questionIndex) => {
+                        mathQuestions.map((question) => {
                             return (
-                                <StyledSmallSpacer key={questionIndex}>
+                                <StyledSmallSpacer key={question.id}>
                                 <Card>
                                     <Card.Body>
                                         <p>{question.question}</p>
@@ -49,9 +62,10 @@ const QuizTemplate = (props) => {
                                                                 key={optionIndex}
                                                                 inline
                                                                 label={option.label}
-                                                                name={`${questionIndex}-group`}
+                                                                name={`${question.id}-group`}
                                                                 type="radio"
                                                                 id={`${question}-${option}-${optionIndex}`}
+                                                                onClick={() => handleAnswer(question.id, option)}
                                                             />
                                                     )
                                                 })
