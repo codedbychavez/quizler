@@ -14,7 +14,7 @@ return (
 <Navbar bg="dark" expand={false}>
   <Container fluid>
     <AvailableQuizzesButton aria-controls="offcanvasNavbar">Available Quizzes <i className="bi bi-arrow-right-circle"></i></AvailableQuizzesButton>
-    <StyledRouterLink to="/">Dashboard <i class="bi bi-speedometer2"></i></StyledRouterLink>
+    <StyledRouterLink to="/">Dashboard <i className="bi bi-speedometer2"></i></StyledRouterLink>
     <StyledNavbarBrand href="#">Quizler <StyledSmallText>V{props.version}</StyledSmallText></StyledNavbarBrand>
 
     <Navbar.Offcanvas
@@ -30,7 +30,7 @@ return (
         <Nav className="justify-content-end flex-grow-1 pe-3">
             <StyledNavbarSectionTitle>Beginner</StyledNavbarSectionTitle>
             <hr/>
-            <StyledRouterLinkSideNav to="/quiz/math">Simple Mathematics <i class="bi bi-box-arrow-up-right"></i></StyledRouterLinkSideNav>
+            <StyledRouterLinkSideNav to="/quiz/math">Simple Mathematics <i className="bi bi-box-arrow-up-right"></i></StyledRouterLinkSideNav>
 
         </Nav>
    
