@@ -1,6 +1,6 @@
 # Quizler
 
-![image](https://user-images.githubusercontent.com/74829200/158034790-c158d5f0-3598-4320-ad86-8333d4cffe1b.png)
+![image](https://user-images.githubusercontent.com/74829200/158384047-19b6383b-9d20-46ec-8cc6-6515aad69e1a.png)
 
 
 ## Setup
@@ -29,3 +29,11 @@ The build is minified and the filenames include the hashes.\
 Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+
+## Quiz Page
+
+![image](https://user-images.githubusercontent.com/74829200/158384310-8ddfbe31-010f-4ce3-ad56-33138cbf72a8.png)
+
+## Quiz Submitted
+
+![image](https://user-images.githubusercontent.com/74829200/158384510-4bdb5f4a-b5c4-4460-8d3d-d147a235a2dc.png)
