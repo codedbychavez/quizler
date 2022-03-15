@@ -7,8 +7,16 @@ import Form from "react-bootstrap/Form";
 import { MathQuestions } from "../../data/math_questions";
 import { Button } from "react-bootstrap";
 import { GradeQuiz } from "../../functions/grade_quiz";
+import { useState } from "react";
+import ScoreToast from "../organisms/ScoreToast";
 
 const QuizTemplate = (props) => {
+
+  // Controls showing score toast
+  const [showScoreToast, setShowScoreToast] = useState(false)
+  const toggleShowScoreToast = () => setShowScoreToast(!showScoreToast)
+  const [score, setScore] = useState("")
+
   const answers = [];
 
   const instructions = [
@@ -24,17 +32,20 @@ const QuizTemplate = (props) => {
       option: option,
     };
     if (!answers.some((answer) => answer.questionId === questionId)) {
-      answers.push(answer);
+        answers.push(answer);
     } else {
       let answerIndex = answers.indexOf(answer);
-      answers.splice(answerIndex, 1, answer);
+        answers.splice(answerIndex, 1, answer);
     }
   };
 
   const handleSubmit = (event) => {
+    
     const score = GradeQuiz(mathQuestions.length, answers);
-    console.log("You scored: ", score);
+    setScore(score);
+    setShowScoreToast(true)
     event.preventDefault();
+    event.target.reset();
   };
 
   return (
@@ -50,6 +61,7 @@ const QuizTemplate = (props) => {
           </Card.Header>
 
           <StylesCardBody>
+            <ScoreToast score={score} showScoreToast={showScoreToast} toggleShowScoreToast={toggleShowScoreToast} />
             <Form onSubmit={handleSubmit}>
               {mathQuestions.map((question) => {
                 return (
